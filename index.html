@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transform & animation</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	
+	/* Start http://www.cursors-4u.com */ * {cursor:url(http://ani.cursors-4u.net/symbols/images9/sym827.gif), auto !important;} /* End http://www.cursors-4u.com */
+		.caixa{
+			width: 100px;
+			height: 100px;
+            border-radius:100px;
+			background: pink;
+			animation: rotacio2;
+			animation-duration:10s;
+			animation-iteration-count: 2;/*infinite*/
+			animation-delay: 3s;
+			animation-timing-function: cubic-bezier(0.3, 0.7, 0.7, 0.2);
+			animation-direction: alternate;
+			animation-fill-mode: both;
+
+		}
+		.caixa:hover{
+			animation-play-state: paused;
+		}
+		.escala{
+			background: yellow;
+			transform: scale(0.5,2);
+		}
+		.sesgar{
+			background: red;
+			transform: skew(45deg,70deg);
+		}
+		.trasllada{
+			background: orange;
+			transform: translate(20px, 30px, 100px);
+		}
+		.rotar{
+			background: black;
+			transform: rotate(45deg);
+			animation: rotacio 2s infinite;
+		}
+		@keyframes rotacio{
+			from{transform: rotate(45deg);
+				background: black;
+				transform: scale(1, 1);}
+			to{transform: rotate(270deg);
+				background:pink;
+			    transform: scale(1, 10) }
+		}
+		@keyframes rotacio2{
+			0%{background: aqua;
+			   transform: rotate(0deg);}
+			20%{background: deeppink;
+			   transform:rotate(45deg);}
+			95%{background: red;
+				transform:rotate(270deg);}
+			100%{background: black;
+				transform:rotate(360deg);}
+		}
+	</style>
+
+</head>
+<body>
+	<svg version="1.0" id="Capa_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
+	 style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.Sombra_x0020_paralela{fill:none;}
+	.Esquinas_x0020_redondeadas_x0020_2_x0020_pt_x002E_{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.Reflejo_x0020_vivo_x0020_X{fill:none;}
+	.Bisel_x0020_suave{fill:url(#SVGID_1_);}
+	.Atardecer{fill:#FFFFFF;}
+	.Follaje_GS{fill:#FFDD00;}
+	.Pompadour_GS{fill-rule:evenodd;clip-rule:evenodd;fill:#51AEE2;}
+	.st0{fill:#7AB929;stroke:#000000;stroke-miterlimit:10;}
+	.st0:hover{
+		animation: mou 10s infinite;
+¨       }
+	    @keyframes mou{
+	    	from{
+	    		stroke:deeppink;
+	    		fill:blue;
+	    	}
+	    	to{
+	    		stroke:black;
+	    		fill:pink;
+	    	}
+	    }
+	}
+</style>
+<path class="st0" d="M150,253.5c63.2-124.8,63.2-124.8,63.2-124.8s109.4-112.8,153,43.6s194,81.2,39.3,160.7
+	s-233.3,158.1-244.4,39.3S150,253.5,150,253.5z"/>
+</svg>
+	<div class="caixa"></div>
+	<div class="caixa escala"></div>
+	<div class="caixa sesgar"></div>
+	<div class="caixa trasllada"></div>
+	<div class="caixa rotar"></div>
+</body>
+</html>
